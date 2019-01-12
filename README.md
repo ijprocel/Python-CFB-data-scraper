@@ -5,7 +5,7 @@ This is a program that scrapes college football results from https://www.sports-
 -The winner's AP Poll rank and loser's AP poll rank (if applicable)  
 -The number of points scored by the winner and by the loser  
 -A column indicating if the home team lost.†  
--Which season the game took place (January bowl games are grouped with the season that they followed)
+-Which season the game took place (January bowl games are grouped with the season that they followed)  
 -The week of the season that the game took place (1st week, 2nd, etc.)  
 
 \**python3 request_practice.py start end. Start year is lower/earlier*
