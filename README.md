@@ -9,6 +9,6 @@ This is a program that scrapes college football results from sports-reference.co
 -Which season the game took place (January bowl games are grouped with the season that they followed)
 -The week of the season that the game took place (1st week, 2nd, etc.)  
 
-\**python3 request_practice.py start end. Start year is lower/earlier
+\**python3 request_practice.py start end. Start year is lower/earlier*
 
-†*The "home_away" flag only tells you if the home team lost. Games where the home team won and games played at a neutral site are not differentiated
+†*The "home_away" flag only tells you if the home team lost. Games where the home team won and games played at a neutral site are not differentiated*
