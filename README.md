@@ -1,6 +1,5 @@
 # Python-CFB-data-scraper
-Scrapes college football results from the web
-This is a program that scrapes college football results from sports-reference.com. The user gives a start and end year (inclusive)\* as command-line arguments and the program returns a DataFrame with 9 columns. Each row is an individual game and the columns are:  
+This is a program that scrapes college football results from https://www.sports-reference.com/. The user gives a start and end year (inclusive)\* as command-line arguments and the program returns a DataFrame with 9 columns. Each row is an individual game and the columns are:  
 -The winner  
 -The loser  
 -The winner's AP Poll rank and loser's AP poll rank (if applicable)  
