@@ -1,5 +1,7 @@
 # Python-CFB-data-scraper
-This is a program that scrapes Division 1 FBS/Division 1-A college football results from https://www.sports-reference.com/. The user gives 3 parameters as command-line arguments: a start and end year (inclusive, required parameters) and a time delay in seconds between requests (optional parameter, there will be one request made per season).\*    
+This is a program that scrapes Division 1 FBS/Division 1-A college football results from https://www.sports-reference.com/.  
+
+The user gives 3 parameters as command-line arguments: a start and end year (inclusive, required parameters) and a time delay in seconds between requests (optional parameter, there will be one request made per season).\*    
 
 The program returns, and saves to a CSV, a DataFrame with 9 columns. Each row is an individual game and the columns are:  
 -The winner  
