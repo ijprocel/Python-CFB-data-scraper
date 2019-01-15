@@ -87,5 +87,5 @@ final_df['l_pts'] = final_df.l_pts.astype(int)
 final_df = final_df.reset_index(drop=True)
 final_df = final_df[['season', 'week', 'winner', 'w_rank', 'w_pts', 'home_away', 'loser', 'l_rank', 'l_pts',]]
 
-final_df.to_csv('./cfb_data2.csv')
+final_df.to_csv('./cfb_data.csv')
 print(final_df.head())
