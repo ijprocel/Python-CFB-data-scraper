@@ -16,7 +16,7 @@ The program returns, and saves to a CSV, a DataFrame with 9 columns. Each row is
 
 \**Ex:*  
 '''  
-"$ python3 request_practice.py 2008 2018 5"  
+$ python3 request_practice.py 2008 2018 5  
 '''  
 *Will return 11 seasons of data with a 5 second delay between requests. Start year must be less than or equal to end year.*  
 
