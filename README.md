@@ -14,7 +14,11 @@ The program returns, and saves to a CSV, a DataFrame with 9 columns. Each row is
 -Which season the game took place (January bowl games are grouped with the season that they followed)  
 -The week of the season that the game took place (1st week, 2nd, etc.)  
 
-\**Ex: "python3 request_practice.py 2008 2018 5" will return 11 seasons and take a 5 second delay between requests. Start year must be less than or equal to end year.*
+\**Ex:*  
+'''
+"python3 request_practice.py 2008 2018 5"  
+'''
+*Will return 11 seasons of data with a 5 second delay between requests. Start year must be less than or equal to end year.*  
 
 †*The "home_away" flag only tells you if the home team lost. Games where the home team won and games played at a neutral site are not differentiated*    
 
