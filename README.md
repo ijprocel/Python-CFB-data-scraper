@@ -1,4 +1,4 @@
-# Python-CFB-data-scraper
+# Scrape college football data with Python!
 This is a program that scrapes Division 1 FBS/Division 1-A college football results from https://www.sports-reference.com/.  
 
 ## Usage  
