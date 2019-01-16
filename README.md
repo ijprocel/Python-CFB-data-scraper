@@ -11,7 +11,9 @@ Will return 10 seasons of data with a 5 second delay between requests. Start yea
 ## Output  
 ![alt text](https://github.com/ijprocel/Python-CFB-data-scraper/blob/ijprocel-patch-1/output-example.png)  
   
-The program returns, and saves to a CSV, a DataFrame with 9 columns. It contains the name, points scored, and AP rank (if applicable) for the teams involved, a flag indicating if the home team lost†, as well as the year (January bowl games are grouped with the season that they followed) and week of the season the game took place.    
+The program returns, and saves to a CSV, a DataFrame with 9 columns. It contains the name, points scored, and AP rank (if applicable) for the teams involved, the year\* and week of the season the game took place, as well as a flag indicating if the home team lost†.    
+
+\**January bowl games are grouped with the season that they followed*    
 
 †*The "home_away" flag only tells you if the home team lost. Games where the home team won and games played at a neutral site are not differentiated from each other*  
 
