@@ -10,6 +10,7 @@ Will return 11 seasons of data with a 5 second delay between requests. Start yea
 
 ## Output  
 The program returns, and saves to a CSV, a DataFrame with 9 columns. Each row is an individual game and the columns are:  
+![alt text](Python-CFB-data-scraper/Screenshot from 2019-01-15 20-08-06.png)  
 -The winner  
 -The loser  
 -The winner's AP Poll rank (if applicable)  
