@@ -9,7 +9,7 @@ $ python3 request_practice.py 2008 2017 5
 Will return 10 seasons of data with a 5 second delay between requests. Start year must be less than or equal to end year.  
 
 ## Output  
-![alt text](https://github.com/ijprocel/Python-CFB-data-scraper/blob/ijprocel-patch-1/output-example.png)  
+![alt text](https://github.com/ijprocel/Python-CFB-data-scraper/blob/master/output-example.png)  
   
 The program returns, and saves to a CSV, a DataFrame where each row contains information about a single game. It contains the name, points scored, and AP rank (if applicable) for the teams involved, the year\* and week of the season the game took place, as well as a flag indicating if the home team lost†.    
 
