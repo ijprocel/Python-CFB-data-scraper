@@ -2,7 +2,9 @@
 This is a program that scrapes Division 1 FBS/Division 1-A college football results from https://www.sports-reference.com/.  
 
 ## Usage  
-The user gives 2 or 3 parameters as command-line arguments: a start and end year, inclusive (required parameters), and a time delay in seconds between requests (optional parameter). There will be one request made per season requested. Ex:  
+The user gives 2 or 3 parameters as command-line arguments: a start and end year, inclusive (required parameters), and a time delay in seconds between requests (optional parameter). There will be one request made per season requested. 
+
+Ex:  
 ```  
 $ python3 request_practice.py 2008 2017 5  
 ```  
