@@ -1,26 +1,13 @@
 import requests, pandas as pd, sys, time
 from bs4 import BeautifulSoup
 
-start = int(sys.argv[1])
-end = int(sys.argv[2])
-
-if start > end:
-    raise ValueError('start year must be less than or equal to end year')
-
-delay = 0
-if len(sys.argv) == 4:
-    delay = float(sys.argv[3])
-
-#Initialize a list to hold sub-DataFrames for each individual year
-dfs = []
-
-while start <= end:
+def get_data_for_season(year):
     #Create BS object from entire webpage
-    url = 'https://www.sports-reference.com/cfb/years/%d-schedule.html' %(start)
+    url = f'https://www.sports-reference.com/cfb/years/{year}-schedule.html'
     r = requests.get(url)
     soup = BeautifulSoup(r.text)
     
-    #Create 2nd BS object from the first row of the table only
+    #Create 2nd BS object from the header row of the table only
     row_text = str(soup.find('tr'))    
     soup2 = BeautifulSoup(row_text)
 
@@ -29,7 +16,7 @@ while start <= end:
     header_list = [h.get_text() for h in headers_html]
     header_list.remove('Rk')
 
-    #Initialize the dictionary that will become a DataFrame
+    #Initialize a dictionary to store season data
     cfb_data = {k:[] for k in header_list}
 
     #Find all table data entries
@@ -55,7 +42,7 @@ while start <= end:
     df = pd.DataFrame(cfb_data)
     df = df[['Winner', 'w_pts', 'home_away', 'l_pts', 'Loser', 'Wk']]
     
-    df['season'] = start
+    df['season'] = year
 
     #Extract AP Poll rankings from team names and put them in their own columns.
     df['w_rank'] = df['Winner'].str.extract('(\d\d?)', expand=False)
@@ -67,8 +54,23 @@ while start <= end:
 
     #Append new DataFrame to master list of DataFrames, give status update, increment counter, sleep
     dfs.append(df)
-    print(str(start) + '  done!')
-    start +=1
+    print(str(year) + '  done!')
+
+start = int(sys.argv[1])
+end = int(sys.argv[2])
+
+if start > end:
+    raise ValueError('start year must be less than or equal to end year')
+
+delay = 0
+if len(sys.argv) == 4:
+    delay = float(sys.argv[3])
+
+#Initialize a list to hold sub-DataFrames for each individual year
+dfs = []
+
+for year in range(start, end+1, 1):
+    get_data_for_season(year)
     time.sleep(delay)
 
 final_df = pd.concat(dfs)
@@ -76,14 +78,14 @@ final_df = pd.concat(dfs)
 #Make column headers all-lowercase
 final_df.rename(columns={'Wk':'week', 'Winner':'winner', 'Loser':'loser'}, inplace=True)
 
-#Drop games that weren't actually played and convert scores to integers
+#Drop games that weren't actually played, convert scores to integers
 final_df['w_pts'] = pd.to_numeric(final_df.w_pts, errors='coerce')
 final_df['l_pts'] = pd.to_numeric(final_df.l_pts, errors='coerce')
 final_df.dropna(subset=['w_pts', 'l_pts'], how='any', inplace=True)
 final_df['w_pts'] = final_df.w_pts.astype(int)
 final_df['l_pts'] = final_df.l_pts.astype(int)
 
-#Fix index and reorder
+#Fix index and reorder columns
 final_df = final_df.reset_index(drop=True)
 final_df = final_df[['season', 'week', 'winner', 'w_rank', 'w_pts', 'home_away', 'loser', 'l_rank', 'l_pts',]]
 
