@@ -3,8 +3,8 @@ import pandas as pd, numpy as np
 all_data = pd.read_csv('./cfb_data.csv', index_col=0)
 print(all_data.head())
 
-all_data.dropna(subset=['w_rank', 'l_rank'], inplace=True, how='all')
-all_data.fillna(value={'w_rank': 1000, 'l_rank':1000}, inplace=True)
+all_data.dropna(subset=['w_rank', 'l_rank'], inplace=True, how='any')
+
 all_data['w_rank'] = all_data.w_rank.astype(int)
 all_data['l_rank'] = all_data.l_rank.astype(int)
 
