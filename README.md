@@ -6,7 +6,7 @@ The user gives 2 or 3 parameters as command-line arguments: a start and end year
 
 Ex:  
 ```  
-$ python3 request_practice.py 2008 2017 5  
+$ python3 scrape_cfb_data.py 2008 2017 5  
 ```  
 Will return 10 seasons of data with a 5 second delay between requests. Start year must be less than or equal to end year.  
 
